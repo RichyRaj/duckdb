@@ -4,6 +4,9 @@
 #include "duckdb/main/connection_manager.hpp"
 #include "duckdb/main/database.hpp"
 #include "duckdb/main/appender.hpp"
+#include "tigerdb/tigerdb.hpp"
+
+#include <iostream>
 
 using namespace duckdb;
 using namespace std;
@@ -57,6 +60,12 @@ unique_ptr<QueryResult> Connection::SendQuery(string query) {
 }
 
 unique_ptr<MaterializedQueryResult> Connection::Query(string query) {
+	cout << "Tiger DB: " << query << endl;
+	TigerDB t;
+	t.print();
+	// ===========================  Error Case ===========================
+	// return make_unique<MaterializedQueryResult>("You cannot go after this. We are sorry !");\
+	// ===================================================================
 	auto result = context->Query(query, false);
 	assert(result->type == QueryResultType::MATERIALIZED_RESULT);
 	return unique_ptr_cast<QueryResult, MaterializedQueryResult>(move(result));
