@@ -4,8 +4,8 @@
 import os, subprocess, re
 
 bison_location     = "bison"
-base_dir           = 'third_party/libpg_query/grammar'
-pg_dir             = 'third_party/libpg_query'
+base_dir           = '../third_party/libpg_query/grammar'
+pg_dir             = '../third_party/libpg_query'
 template_file      = os.path.join(base_dir, 'grammar.y')
 target_file        = os.path.join(base_dir, 'grammar.y.tmp')
 header_file        = os.path.join(base_dir, 'grammar.hpp')

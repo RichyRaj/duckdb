@@ -14,6 +14,7 @@
 #include "duckdb/main/prepared_statement.hpp"
 #include "duckdb/main/appender.hpp"
 #include "duckdb/common/enums/profiler_format.hpp"
+#include "duckdb/main/tigerdb.hpp"
 
 namespace duckdb {
 
@@ -68,6 +69,7 @@ public:
 
 public:
 	DuckDB &db;
+	TigerDB t;
 	unique_ptr<ClientContext> context;
 	warning_callback warning_cb;
 

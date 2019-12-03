@@ -5,6 +5,7 @@ add_library(duckdb_main OBJECT
             connection_manager.cpp
             database.cpp
             duckdb-c.cpp
+            tigerdb.cpp
             materialized_query_result.cpp
             prepared_statement.cpp
             query_profiler.cpp
